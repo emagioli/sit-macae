@@ -15,6 +15,17 @@ linhas = [
         'frequencia': ['40min', '80min', '80min'],
         'dias': ['Seg à Sex', 'Sábado', 'Domingo']
     },
+    {
+        'linha': 'A73',
+        'nome': 'Engenho da Praia',
+        'h_inicial_tc': ['06:31', '06:30', '06:30'],
+        'h_final_tc': ['23:00','20:00','20:00'],
+        'frequencia_tc': ['46min', '90min', '90min'],
+        'h_inicial': ['05:45','05:45','05:45'],
+        'h_final': ['21:51','19:15','19:15'],
+        'frequencia': ['46min', '90min', '90min'],
+        'dias': ['Seg à Sex', 'Sábado', 'Domingo']
+    },
     # {'linha':,
     #     'nome':,
     #     'h_inicial_sem':,
@@ -97,11 +108,12 @@ def print_horarios(h_ini, freq, ciclos):
             print()
 
 
-linha = linhas[0]
-
+linha = linhas[1]
 # Calcular horários durante a semana
+
+print(f'    Linha: {linha["nome"]} ({linha["linha"]})')
 for n in range(0,len(linha['dias'])):
-    print(f'    Linha: {linha["nome"]} ({linha["linha"]})')
+    print()
     print('---'*15)
     print(f'    {linha["dias"][n]}  ')
     print('---'*15)
