@@ -1,11 +1,9 @@
 from datetime import datetime as dt
 from datetime import timedelta
 
-import math
-
 # Linhas de interesse = A33 A41 // A31 C31A C31H C41A C41B
 
-lista = [
+linhas = [
     {
         'linha': 'A33',
         'nome': 'Novo Hospital',
@@ -41,7 +39,7 @@ lista = [
     },
     {
     'linha': 'A31',
-    'nome': 'Terminal Central X Vila Moreira',
+    'nome': 'Vila Moreira',
     'h_inicial_tc': [['06:00', '17:00', '20:00', '23:30'], ['06:20'], ['06:20']],
     'h_final_tc': [['17:00', '20:00', '23:30', '00:00'], ['23:20'], ['23:20']],
     'frequencia_tc': [['30min', '36min', '30min', '30min'], ['40min'], ['40min']],
@@ -49,57 +47,71 @@ lista = [
     'h_final': [['16:45', '17:18', '19:42', '20:15', '23:15', '00:00'], ['22:40', '00:00'], ['22:40', '00:00']],
     'frequencia': [['30min', '33min', '36min', '33min', '30min', '45min'], ['40min', '80min'], ['40min', '80min']],
     'dias': ['Dias Úteis', 'Sábados', 'Domingos e Feriados']
-    },
-    {
-        'linha': 'C41A',
-        'nome': 'TERMINAL CENTRAL X BAIRRO DA GLORIA',
-        'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
-        'h_final_tc': [['22:24'], ['00:00'], ['00:00']],
-        'frequencia_tc': [['36min'], ['60min'], ['60min']],
-        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
-        'h_final': [['Circular'], ['Circular'], ['Circular']],
-        'frequencia': [[''], [''], ['']],
-        'dias': ['Dias Úteis', 'Sábados', 'Domingo']
-    },
-    {
-        'linha': 'C41B',
-        'nome': 'TERMINAL CENTRAL X BAIRRO DA GLORIA',
-        'h_inicial_tc': [['05:18', '22:42', '23:30'], ['05:30'], ['05:30']],
-        'h_final_tc': [['22:42', '23:30', '00:00'], ['23:00'], ['22:30']],
-        'frequencia_tc': [['36min', '48min', '30min'], ['70min'], ['60min']],
-        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
-        'h_final': [['Circular'], ['Circular'], ['Circular']],
-        'frequencia': [[''], [''], ['']],
-        'dias': ['Dias Úteis', 'Sábados', 'Domingo']
-    }
+},
+{
+    'linha': 'C41A',
+    'nome': 'Bairro da Glória',
+    'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
+    'h_final_tc': [['22:24'], ['00:00'], ['00:00']],
+    'frequencia_tc': [['36min'], ['60min'], ['60min']],
+    'h_inicial': [['Circular'], ['Circular'], ['Circular']],
+    'h_final': [['Circular'], ['Circular'], ['Circular']],
+    'frequencia': [[''], [''], ['']],
+    'dias': ['Dias Úteis', 'Sábados', 'Domingo']
+},
+{
+    'linha': 'C41B',
+    'nome': 'Bairro da Glória',
+    'h_inicial_tc': [['05:18', '22:42', '23:30'], ['05:30'], ['05:30']],
+    'h_final_tc': [['22:42', '23:30', '00:00'], ['23:00'], ['22:30']],
+    'frequencia_tc': [['36min', '48min', '30min'], ['70min'], ['60min']],
+    'h_inicial': [['Circular'], ['Circular'], ['Circular']],
+    'h_final': [['Circular'], ['Circular'], ['Circular']],
+    'frequencia': [[''], [''], ['']],
+    'dias': ['Dias Úteis', 'Sábados', 'Domingo']
+}
 ]
 
-##selecione as linhas desejadas abaixo
+# retorna o objeto {} da linha correspondente, ou False caso não encontrada
+def get_line(linha):
+    for l in linhas:
+        if l['linha'] == linha:
+            return l
+    return False
 
-linhas = [lista[len(lista)-1]]
+# retorna lista de linhas. Ex.: ['A33','A45']
+def get_lines_list():
+    lines = []
+    for l in linhas:
+        lines.append(l['linha'])
+    return lines
 
+# retorna string com as linhas (formato: A33 - NOVO HOSPITAL)
+def print_lines_list():
+    s = ""
+    for l in linhas:
+        s = s + f"{l['linha']} - {l['nome']}\n"
+    return s
 
-def print_horarios(h_ini, h_fim, freq, ciclos):
+# retorna a string com a tabela de horários
+def generate_table(h_ini, h_fim, freq, ciclos):
+    s = ''
     if(ciclos < 2): ciclos +=1
     for i in range(0, ciclos+1):
         if (h_ini + i*freq) < h_fim:
-            print((h_ini + i*freq).strftime('%H:%M'), end='\t')
+            s = s + (h_ini + i*freq).strftime('%H:%M') + '\t'
             if ((i+1) % 4 == 0):
-                print()
-    print()
+                s = s+'\n'
+    s = s + '\n'
+    return s
 
-# Calcular horários durante a semana
-
+# retorna a string final, com todas as informações da linha
 def seeyouspacecowboy(linha):
-    print(f'    Linha: {linha["nome"]} ({linha["linha"]})')
+    string = f'    Linha: {linha["nome"]} ({linha["linha"]})\n'
     for n in range(0, len(linha['dias'])):
-        print()
-        print('---'*15)
-        print(f'    {linha["dias"][n]}  ')
+        string = string + '\n' + '---'*5 + f'    {linha["dias"][n]}    ' + '---'*5 + '\n\n'
         if (linha['frequencia'][0][0]!=''):
-            print('---'*15)
-            print(f'Saída {linha["nome"]}:', end='\n\n')
-
+            string = string + f'Saída {linha["nome"]}:\n\n'
             h_variaveis = len(linha['h_inicial'][n])
             for f in range(0, h_variaveis):
                 h_ini = dt.strptime(linha['h_inicial'][n][f] + ':00', '%H:%M:%S')
@@ -108,13 +120,12 @@ def seeyouspacecowboy(linha):
                 freq = timedelta(minutes=float(
                     linha['frequencia'][n][f].replace('min', '')))
                 ciclos = int(tempo_circulando.total_seconds() / freq.total_seconds())
-                print_horarios(h_ini, h_fim, freq, ciclos)
+                tabela = generate_table(h_ini, h_fim, freq, ciclos)
+                string = string + tabela
 
         if (linha['frequencia_tc'][0][0]!=''):
-            print()
-            print('---'*15,)
-            print(f'Saída Terminal Central:', end='\n\n')
-            
+            string = string + '\n' + '---'*10 + '\n\n'
+            string = string + f'Saída Terminal Central:\n\n'
             h_variaveis = len(linha['h_inicial_tc'][n])
             for f in range(0,h_variaveis):
                 h_ini = dt.strptime(linha['h_inicial_tc'][n][f] + ':00', '%H:%M:%S')
@@ -123,11 +134,7 @@ def seeyouspacecowboy(linha):
                 tempo_circulando = (h_fim - h_ini)
                 freq = timedelta(minutes=float(linha['frequencia_tc'][n][f].replace('min', '')))
                 ciclos = int(tempo_circulando.total_seconds() / freq.total_seconds())
-                print_horarios(h_ini, h_fim, freq, ciclos)
-    
+                tabela = generate_table(h_ini, h_fim, freq, ciclos)
+                string = string + tabela
 
-for l in linhas: 
-    seeyouspacecowboy(l) 
-    print()
-    print('---'*15)
-    print()
+    return string
