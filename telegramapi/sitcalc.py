@@ -52,7 +52,7 @@ linhas = [
     'linha': 'C41A',
     'nome': 'Bairro da Glória',
     'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
-    'h_final_tc': [['22:24'], ['00:00'], ['00:00']],
+    'h_final_tc': [['22:24'], ['00:00'], ['00:00']], 
     'frequencia_tc': [['36min'], ['60min'], ['60min']],
     'h_inicial': [['Circular'], ['Circular'], ['Circular']],
     'h_final': [['Circular'], ['Circular'], ['Circular']],
@@ -94,47 +94,72 @@ def print_lines_list():
     return s
 
 # retorna a string com a tabela de horários
-def generate_table(h_ini, h_fim, freq, ciclos):
-    s = ''
+def generate_timetable_list(h_ini, h_fim, freq, ciclos):
+    horarios = []
     if(ciclos < 2): ciclos +=1
     for i in range(0, ciclos+1):
-        if (h_ini + i*freq) < h_fim:
-            s = s + (h_ini + i*freq).strftime('%H:%M') + '\t'
-            if ((i+1) % 4 == 0):
-                s = s+'\n'
-    s = s + '\n'
-    return s
+        if (h_ini + i*freq) <= h_fim:
+            horarios.append((h_ini + i*freq).strftime('%H:%M'))
+    return horarios
 
-# retorna a string final, com todas as informações da linha
+# retorna uma lista, onde os elementos são listas com os horários calculados
 def seeyouspacecowboy(linha):
-    string = f'    Linha: {linha["nome"]} ({linha["linha"]})\n'
+    timetables_list = [
+        [[],[]],
+        [[],[]],
+        [[],[]],
+    ]
     for n in range(0, len(linha['dias'])):
-        string = string + '\n' + '---'*5 + f'    {linha["dias"][n]}    ' + '---'*5 + '\n\n'
         if (linha['frequencia'][0][0]!=''):
-            string = string + f'Saída {linha["nome"]}:\n\n'
             h_variaveis = len(linha['h_inicial'][n])
             for f in range(0, h_variaveis):
                 h_ini = dt.strptime(linha['h_inicial'][n][f] + ':00', '%H:%M:%S')
                 h_fim = dt.strptime(linha['h_final'][n][f] + ':00', '%H:%M:%S')
+                if(h_ini > h_fim): h_fim += timedelta(days=1)
                 tempo_circulando = (h_fim - h_ini)
                 freq = timedelta(minutes=float(
                     linha['frequencia'][n][f].replace('min', '')))
                 ciclos = int(tempo_circulando.total_seconds() / freq.total_seconds())
-                tabela = generate_table(h_ini, h_fim, freq, ciclos)
-                string = string + tabela
+                horarios = generate_timetable_list(h_ini, h_fim, freq, ciclos)
+                cache = timetables_list[n][0]
+                for h in horarios:
+                    if h not in cache:
+                        timetables_list[n][0].append(h)
 
         if (linha['frequencia_tc'][0][0]!=''):
-            string = string + '\n' + '---'*10 + '\n\n'
-            string = string + f'Saída Terminal Central:\n\n'
             h_variaveis = len(linha['h_inicial_tc'][n])
             for f in range(0,h_variaveis):
                 h_ini = dt.strptime(linha['h_inicial_tc'][n][f] + ':00', '%H:%M:%S')
                 h_fim = dt.strptime(linha['h_final_tc'][n][f] + ':00', '%H:%M:%S')
-                #print(h_fim) ## para debugging
+                if(h_ini > h_fim): h_fim += timedelta(days=1)
                 tempo_circulando = (h_fim - h_ini)
                 freq = timedelta(minutes=float(linha['frequencia_tc'][n][f].replace('min', '')))
                 ciclos = int(tempo_circulando.total_seconds() / freq.total_seconds())
-                tabela = generate_table(h_ini, h_fim, freq, ciclos)
-                string = string + tabela
+                horarios = generate_timetable_list(h_ini, h_fim, freq, ciclos)
+                cache = timetables_list[n][1]
+                for h in horarios:
+                    if h not in cache:
+                        timetables_list[n][1].append(h)
+
+    return timetables_list
+
+def generate_timetable_string(linha):
+    string = ''
+    timetables_list = seeyouspacecowboy(linha)
+    string += f'    Linha: {linha["nome"]} ({linha["linha"]})\n'
+    for n in range(len(timetables_list)): # 3: seg-sex / sab / dom
+        string += '\n' + '---'*5 + f'    {linha["dias"][n]}    ' + '---'*5 + '\n\n'
+        for l in range(len(timetables_list[n])): # 2: saida xxx | saida terminal
+            string += f'Saída {linha["nome"] if l==0 else "Terminal Central"}:\n\n'
+            for i in range(len(timetables_list[n][l])): # qtd de horarios
+                string += timetables_list[n][l][i]
+                string += '\n' if ((i+1)%4==0) else '\t'
+            string += '\n'
+            string += '\n' + '---'*10 + '\n\n'
+    string += '\n'
 
     return string
+#testando com o A33
+TESTE = linhas[4]
+
+print(generate_timetable_string(TESTE))
