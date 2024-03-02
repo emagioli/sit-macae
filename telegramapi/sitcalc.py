@@ -150,16 +150,17 @@ def generate_timetable_string(linha):
     for n in range(len(timetables_list)): # 3: seg-sex / sab / dom
         string += '\n' + '---'*5 + f'    {linha["dias"][n]}    ' + '---'*5 + '\n\n'
         for l in range(len(timetables_list[n])): # 2: saida xxx | saida terminal
-            string += f'Saída {linha["nome"] if l==0 else "Terminal Central"}:\n\n'
-            for i in range(len(timetables_list[n][l])): # qtd de horarios
-                string += timetables_list[n][l][i]
-                string += '\n' if ((i+1)%4==0) else '\t'
-            string += '\n'
-            string += '\n' + '---'*10 + '\n\n'
+            if(len(timetables_list[n][l]) > 0):
+                string += f'Saída {linha["nome"] if l==0 else "Terminal Central"}:\n\n'
+                for i in range(len(timetables_list[n][l])): # qtd de horarios
+                    string += timetables_list[n][l][i]
+                    string += '\n' if ((i+1)%4==0) else '\t'
+                string += '\n'
+                string += '\n' + '---'*10 + '\n\n'
     string += '\n'
 
     return string
-#testando com o A33
-TESTE = linhas[4]
+#
+TESTE = linhas[5]
 
 print(generate_timetable_string(TESTE))
