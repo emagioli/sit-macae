@@ -5,18 +5,18 @@ TOKEN = open('./token.txt','r').read()
 
 bot = telebot.TeleBot(TOKEN)
 
-@bot.message_handler(commands=['start','hello'])
+@bot.message_handler(commands=['start','hello','comecar','oi'])
 def send_welcome(message):
     rep = '''Olá! Escolha um dos comandos abaixo:
 
 - Digite "linhas" para listar as linhas disponíveis para consulta.
 
-- Digite "print [linha]" para imprimir tabela da linha solicitada 
+- Digite "print [linha]" para consultar a tabela de horários desejada. 
 (Ex.: print A33)
 
 Obs.: Ainda em fase de testes.
 
-Desenvolvido por Enzo Magioli numa madrugada qualquer :)
+
     '''
     bot.reply_to(message,rep)
 
@@ -32,16 +32,18 @@ def list_lines(message):
     elif('print' in message.text.lower()):
         rep = print_tabela(message)
         bot.reply_to(message, rep)
+    else:
+        bot.reply_to(message, 'Comando não reconhecido. Por favor, tente novamente.')
 
 # @bot.message_handler(commands=['print'])
 def print_tabela(message):
     line_code = message.text.split(' ')[1].upper()
     if (line_code in sitcalc.get_lines_list()):
         l = sitcalc.get_line(line_code)
-        rep = sitcalc.seeyouspacecowboy(l)
+        rep = sitcalc.generate_timetable_string(l)
     else:
         rep = 'Perdão, mas essa linha não consta nos meus registros. \nQuer tentar novamente?'
-        list_lines('linhas')
+        #list_lines('linhas')
 
     return rep
 
