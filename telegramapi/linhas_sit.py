@@ -1,107 +1,6 @@
+# ULTIMA VERIFICAÇÃO: 23/3/2024
 linhas = [
-    {
-        'linha': 'A33',
-        'nome': 'Novo Hospital',
-        'h_inicial_tc': [['05:20'], ['06:40'], ['06:40']],
-        'h_final_tc': [['22:40'], ['21:20'], ['21:20']],
-        'frequencia_tc': [['40min'], ['80min'], ['80min']],
-        'h_inicial': [['05:20'], ['06:00'], ['06:00']],
-        'h_final': [['22:40'], ['20:40'], ['20:40']],
-        'frequencia': [['40min'], ['80min'], ['80min']],
-        'dias': ['Dias úteis', 'Sábado', 'Domingo']
-    },
-    {
-        'linha': 'A41',
-        'nome': 'Nova Macaé',
-        'h_inicial_tc': [['06:30'], ['06:30'], ['06:30']],
-        'h_final_tc': [['21:10'], ['20:30'], ['20:30']],
-        'frequencia_tc': [['20min'], ['60min'], ['60min']],
-        'h_inicial': [['05:00'], ['06:00'], ['06:00']],
-        'h_final': [['20:40'], ['21:00'], ['21:00']],
-        'frequencia': [['20min'], ['60min'], ['60min']],
-        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
-    },
-
-    {
-        'linha': 'A73R',
-        'nome': 'Engenho da Praia (Rápido)',
-        'h_inicial_tc': [['06:31', '21:05', '22:00'], ['06:30'], ['06:30']],
-        'h_final_tc': [['21:05', '22:00', '23:00'], ['20:00'], ['20:00']],
-        'frequencia_tc': [['46min', '55min', '60min'], ['90min'], ['90min']],
-        'h_inicial': [['05:45'], ['05:45'], ['05:45']],
-        'h_final': [['21:51'], ['19:15'], ['19:15']],
-        'frequencia': [['46min'], ['90min'], ['90min']],
-        'dias': ['Dias úteis', 'Sábado', 'Domingo']
-    },
-    {
-        'linha': 'A73',
-        'nome': 'Engenho da Praia',
-        'h_inicial_tc': [['06:10', '06:48', '07:14', '19:30', '20:50', '21:40'], ['06:30'], ['06:30']],
-        'h_final_tc': [['06:48', '07:14', '19:30', '20:50', '21:40', '22:20'], ['20:00'], ['20:00']],
-        'frequencia_tc': [['38min', '26min', '32min', '40min', '50min', '40min'], ['90min'], ['90min']],
-        'h_inicial': [['05:22', '06:08', '06:26', '19:14', '20:00'], ['07:15'], ['07:15']],
-        'h_final': [['06:08', '06:26', '19:14', '20:00', '21:20'], ['20:45'], ['20:45']],
-        'frequencia': [['46min', '18min', '32min', '46min', '40min'], ['90min'], ['90min']],
-        'dias': ['Dias úteis', 'Sábado', 'Domingo']
-    },
-    {
-        'linha': 'A31',
-        'nome': 'Vila Moreira',
-        'h_inicial_tc': [
-            ['05:15', '16:45', '17:18', '19:42', '20:15', '23:15'],
-            ['05:40', '20:20', '22:00'],
-            ['05:40', '23:00']
-        ],
-        'h_final_tc': [
-            ['16:45', '17:18', '19:42', '20:15', '23:15', '00:00'],
-            ['20:20', '22:00', '00:00'],
-            ['23:00', '00:00']
-        ],
-        'frequencia_tc': [
-            ['30min', '33min', '36min', '33min', '30min', '45min'],
-            ['80min', '100min', '120min'],
-            ['80min', '60min']
-        ],
-        'h_inicial': [
-            ['06:00', '17:00', '20:00'],
-            ['06:20', '21:00'],
-            ['06:20', '22:20']
-        ],
-        'h_final': [
-            ['17:00', '20:00', '23:30'],
-            ['21:00', '22:40'],
-            ['22:20', '23:20']
-        ],
-        'frequencia': [
-            ['30min', '36min', '30min'],
-            ['80min', '100min'],
-            ['80min', '70min']
-        ],
-        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
-    },
-    {
-        'linha': 'C41A',
-        'nome': 'Bairro da Glória',
-        'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
-        'h_final_tc': [['22:24'], ['00:00'], ['00:00']],
-        'frequencia_tc': [['36min'], ['60min'], ['60min']],
-        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
-        'h_final': [['Circular'], ['Circular'], ['Circular']],
-        'frequencia': [[''], [''], ['']],
-        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
-    },
-    {
-        'linha': 'C41B',
-        'nome': 'Bairro da Glória',
-        'h_inicial_tc': [['05:18', '22:42', '23:30'], ['05:30'], ['05:30']],
-        'h_final_tc': [['22:42', '23:30', '00:00'], ['23:00'], ['22:30']],
-        'frequencia_tc': [['36min', '48min', '30min'], ['70min'], ['60min']],
-        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
-        'h_final': [['Circular'], ['Circular'], ['Circular']],
-        'frequencia': [[''], [''], ['']],
-        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
-    },
-    {
+    {#ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A11',
         'nome': 'Cavaleiros',
         'h_inicial_tc': [['06:00'], ['06:00'], ['06:00']],
@@ -112,7 +11,7 @@ linhas = [
         'frequencia': [['104min'], ['104min'], ['104min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {
+    {#ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A11B',
         'nome': 'Cavaleiros',
         'h_inicial_tc': [['06:52'], ['06:52'], ['06:52']],
@@ -123,7 +22,7 @@ linhas = [
         'frequencia': [['104min'], ['104min'], ['104min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {
+    {#ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A12',
         'nome': 'Parque Atlântico',
         'h_inicial_tc': [['05:54', '20:20'], ['05:50'], ['05:50']],
@@ -134,7 +33,9 @@ linhas = [
         'frequencia': [['36min'], ['50min'], ['50min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        #imprime o 05:30 depois de 06:36 em h_inicial. 
+        #TODO soluc. possivel: acrescentar um sort na lista de horários em sitcalc
         'linha': 'A13',
         'nome': 'Horto',
         'h_inicial_tc': [['04:30', '07:18', '22:00', '22:40', '23:10'], ['05:00', '23:00'], ['05:00', '23:00']],
@@ -145,7 +46,7 @@ linhas = [
         'frequencia': [['28min', '1min', '21min', '33min', '15min'], ['40min'], ['40min']],
         'dias': ['Dias úteis', 'Sábado', 'Domingo']
     },
-    {
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A13C',
         'nome': 'Horto (Circular)',
         'h_inicial_tc': [['06:00'], ['06:00'], ['06:00']],
@@ -156,7 +57,7 @@ linhas = [
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {
+    {#ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A21',
         'nome': 'Vila Moreira',
         'h_inicial_tc': [['06:20', '20:20'], ['06:20'], ['06:20']],
@@ -167,27 +68,39 @@ linhas = [
         'frequencia': [['40min', '80min'], ['80min'], ['80min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {
+    {#ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A22A',
         'nome': 'Verdes Mares',
-        'h_inicial_tc': [['05:45', '08:09', '16:35', '20:48', '22:44', '23:20'],
-                         ['05:42', '15:40', '23:00'],
-                         ['05:40', '23:00']],
-        'h_final_tc': [['08:09', '16:35', '20:48', '22:44', '23:20', '00:00'],
-                       ['15:40', '23:00', '00:00'],
-                       ['23:00', '00:00']],
-        'frequencia_tc': [['18min', '22min', '18min', '22min', '36min', '40min'],
-                          ['28min', '40min', '60min'],
-                          ['40min', '60min']],
-        'h_inicial': [['05:00', '08:36', '17:20', '19:48', '22:00'],
-                      ['05:00', '14:20'],
-                      ['05:00']],
-        'h_final': [['08:36', '17:20', '19:48', '22:00', '23:00'],
-                    ['14:20', '23:00'],
-                    ['23:00']],
-        'frequencia': [['18min', '22min', '18min', '22min', '30min'],
-                       ['28min', '40min'],
-                       ['40min']],
+        'h_inicial_tc': [
+            ['05:45', '08:09', '16:35', '20:48', '22:44', '23:20'],
+            ['05:42', '15:40', '23:00'],
+            ['05:40', '23:00']
+        ],
+        'h_final_tc': [
+            ['08:09', '16:35', '20:48', '22:44', '23:20', '00:00'],
+            ['15:40', '23:00', '00:00'],
+            ['23:00', '00:00']
+        ],
+        'frequencia_tc': [
+            ['18min', '22min', '18min', '22min', '36min', '40min'],
+            ['28min', '40min', '60min'],
+            ['40min', '60min']
+        ],
+        'h_inicial': [
+            ['05:00', '08:36', '17:20', '19:48', '22:00'],
+            ['05:00', '14:20'],
+            ['05:00']
+        ],
+        'h_final': [
+            ['08:36', '17:20', '19:48', '22:00', '23:00'],
+            ['14:20', '23:00'],
+            ['23:00']
+        ],
+        'frequencia': [
+            ['18min', '22min', '18min', '22min', '30min'],
+            ['28min', '40min'],
+            ['40min']
+        ],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
     {
@@ -260,6 +173,41 @@ linhas = [
         ],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'A31',
+        'nome': 'Vila Moreira',
+        'h_inicial_tc': [
+            ['05:15', '16:45', '17:18', '19:42', '20:15', '23:15'],
+            ['05:40', '20:20', '22:00'],
+            ['05:40', '23:00']
+        ],
+        'h_final_tc': [
+            ['16:45', '17:18', '19:42', '20:15', '23:15', '00:00'],
+            ['20:20', '22:00', '00:00'],
+            ['23:00', '00:00']
+        ],
+        'frequencia_tc': [
+            ['30min', '33min', '36min', '33min', '30min', '45min'],
+            ['80min', '100min', '120min'],
+            ['80min', '60min']
+        ],
+        'h_inicial': [
+            ['06:00', '17:00', '20:00'],
+            ['06:20', '21:00'],
+            ['06:20', '22:20']
+        ],
+        'h_final': [
+            ['17:00', '20:00', '23:30'],
+            ['21:00', '22:40'],
+            ['22:20', '23:20']
+        ],
+        'frequencia': [
+            ['30min', '36min', '30min'],
+            ['80min', '100min'],
+            ['80min', '70min']
+        ],
+        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
+    },
     {
         'linha': 'A32F',
         'nome': 'Fronteira',
@@ -270,6 +218,28 @@ linhas = [
         'h_final_tc': [['Circular']],
         'frequencia_tc': [['']],
         'dias': ['Dias Úteis']
+    },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'A33',
+        'nome': 'Novo Hospital',
+        'h_inicial_tc': [['05:20'], ['06:40'], ['06:40']],
+        'h_final_tc': [['22:40'], ['21:20'], ['21:20']],
+        'frequencia_tc': [['40min'], ['80min'], ['80min']],
+        'h_inicial': [['05:20'], ['06:00'], ['06:00']],
+        'h_final': [['22:40'], ['20:40'], ['20:40']],
+        'frequencia': [['40min'], ['80min'], ['80min']],
+        'dias': ['Dias úteis', 'Sábado', 'Domingo']
+    },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'A41',
+        'nome': 'Nova Macaé',
+        'h_inicial_tc': [['06:30'], ['06:30'], ['06:30']],
+        'h_final_tc': [['21:10'], ['20:30'], ['20:30']],
+        'frequencia_tc': [['20min'], ['60min'], ['60min']],
+        'h_inicial': [['05:00'], ['06:00'], ['06:00']],
+        'h_final': [['20:40'], ['21:00'], ['21:00']],
+        'frequencia': [['20min'], ['60min'], ['60min']],
+        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
     {
         'linha': 'A51',
@@ -292,6 +262,50 @@ linhas = [
         'h_final': [['Circular'], ['Circular'], ['Circular']],
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábados', 'Domingo']
+    },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'A73',
+        'nome': 'Engenho da Praia',
+        'h_inicial_tc': [['06:10', '06:48', '07:14', '19:30', '20:50', '21:40'], ['07:15'], ['07:15']],
+        'h_final_tc': [['06:48', '07:14', '19:30', '20:50', '21:40', '22:20'], ['20:45'], ['20:45']],
+        'frequencia_tc': [['38min', '26min', '32min', '40min', '50min', '40min'], ['90min'], ['90min']],
+        'h_inicial': [['05:22', '06:00', '06:26', '19:14', '20:00'], ['06:30'], ['06:30']],
+        'h_final': [['06:00', '06:26', '19:14', '20:00', '21:20'], ['20:00'], ['20:00']],
+        'frequencia': [['38min', '26min', '32min', '46min', '40min'], ['90min'], ['90min']],
+        'dias': ['Dias úteis', 'Sábado', 'Domingo']
+    },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'A73R',
+        'nome': 'Engenho da Praia (Rápido)',
+        'h_inicial_tc': [['06:31', '21:05', '22:00'], ['06:30'], ['06:30']],
+        'h_final_tc': [['21:05', '22:00', '23:00'], ['20:00'], ['20:00']],
+        'frequencia_tc': [['46min', '55min', '60min'], ['90min'], ['90min']],
+        'h_inicial': [['05:45'], ['05:45'], ['05:45']],
+        'h_final': [['21:51'], ['19:15'], ['19:15']],
+        'frequencia': [['46min'], ['90min'], ['90min']],
+        'dias': ['Dias úteis', 'Sábado', 'Domingo']
+    },
+    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'C41A',
+        'nome': 'Bairro da Glória',
+        'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
+        'h_final_tc': [['22:24'], ['00:00'], ['00:00']],
+        'frequencia_tc': [['36min'], ['60min'], ['60min']],
+        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
+        'h_final': [['Circular'], ['Circular'], ['Circular']],
+        'frequencia': [[''], [''], ['']],
+        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
+    },
+    {# #ULTIMA VERIFICAÇÃO: 23/3/2024
+        'linha': 'C41B',
+        'nome': 'Bairro da Glória',
+        'h_inicial_tc': [['05:18', '22:42', '23:30'], ['05:30'], ['05:30']],
+        'h_final_tc': [['22:42', '23:30', '00:00'], ['22:30'], ['22:30']],
+        'frequencia_tc': [['36min', '48min', '30min'], ['60min'], ['60min']],
+        'h_inicial': [['Circular'], ['Circular'], ['Circular']],
+        'h_final': [['Circular'], ['Circular'], ['Circular']],
+        'frequencia': [[''], [''], ['']],
+        'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
     {
         "linha": "T22",
