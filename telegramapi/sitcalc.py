@@ -93,6 +93,9 @@ def generate_timetable_string(linha):
 
     return string
 #
-# TESTE = linhas[5]
 
-# print(generate_timetable_string(TESTE))
+# teste = 'S13'
+# for l in linhas:
+#     if (l['linha'] == teste):
+#         print(generate_timetable_string(l))
+#         break

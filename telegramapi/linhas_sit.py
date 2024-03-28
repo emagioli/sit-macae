@@ -1,6 +1,6 @@
 # ULTIMA VERIFICAÇÃO: 23/3/2024
 linhas = [
-    {#ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A11',
         'nome': 'Cavaleiros',
         'h_inicial_tc': [['06:00'], ['06:00'], ['06:00']],
@@ -11,7 +11,7 @@ linhas = [
         'frequencia': [['104min'], ['104min'], ['104min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {#ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A11B',
         'nome': 'Cavaleiros',
         'h_inicial_tc': [['06:52'], ['06:52'], ['06:52']],
@@ -22,7 +22,7 @@ linhas = [
         'frequencia': [['104min'], ['104min'], ['104min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {#ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A12',
         'nome': 'Parque Atlântico',
         'h_inicial_tc': [['05:54', '20:20'], ['05:50'], ['05:50']],
@@ -33,9 +33,9 @@ linhas = [
         'frequencia': [['36min'], ['50min'], ['50min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
-        #imprime o 05:30 depois de 06:36 em h_inicial. 
-        #TODO soluc. possivel: acrescentar um sort na lista de horários em sitcalc
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
+        # imprime o 05:30 depois de 06:36 em h_inicial.
+        # TODO soluc. possivel: acrescentar um sort na lista de horários em sitcalc
         'linha': 'A13',
         'nome': 'Horto',
         'h_inicial_tc': [['04:30', '07:18', '22:00', '22:40', '23:10'], ['05:00', '23:00'], ['05:00', '23:00']],
@@ -46,7 +46,7 @@ linhas = [
         'frequencia': [['28min', '1min', '21min', '33min', '15min'], ['40min'], ['40min']],
         'dias': ['Dias úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A13C',
         'nome': 'Horto (Circular)',
         'h_inicial_tc': [['06:00'], ['06:00'], ['06:00']],
@@ -57,7 +57,7 @@ linhas = [
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {#ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A21',
         'nome': 'Vila Moreira',
         'h_inicial_tc': [['06:20', '20:20'], ['06:20'], ['06:20']],
@@ -68,7 +68,7 @@ linhas = [
         'frequencia': [['40min', '80min'], ['80min'], ['80min']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {#ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A22A',
         'nome': 'Verdes Mares',
         'h_inicial_tc': [
@@ -173,7 +173,7 @@ linhas = [
         ],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A31',
         'nome': 'Vila Moreira',
         'h_inicial_tc': [
@@ -219,7 +219,7 @@ linhas = [
         'frequencia_tc': [['']],
         'dias': ['Dias Úteis']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A33',
         'nome': 'Novo Hospital',
         'h_inicial_tc': [['05:20'], ['06:40'], ['06:40']],
@@ -230,7 +230,7 @@ linhas = [
         'frequencia': [['40min'], ['80min'], ['80min']],
         'dias': ['Dias úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A41',
         'nome': 'Nova Macaé',
         'h_inicial_tc': [['06:30'], ['06:30'], ['06:30']],
@@ -263,7 +263,7 @@ linhas = [
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábados', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A73',
         'nome': 'Engenho da Praia',
         'h_inicial_tc': [['06:10', '06:48', '07:14', '19:30', '20:50', '21:40'], ['07:15'], ['07:15']],
@@ -274,7 +274,7 @@ linhas = [
         'frequencia': [['38min', '26min', '32min', '46min', '40min'], ['90min'], ['90min']],
         'dias': ['Dias úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'A73R',
         'nome': 'Engenho da Praia (Rápido)',
         'h_inicial_tc': [['06:31', '21:05', '22:00'], ['06:30'], ['06:30']],
@@ -285,7 +285,7 @@ linhas = [
         'frequencia': [['46min'], ['90min'], ['90min']],
         'dias': ['Dias úteis', 'Sábado', 'Domingo']
     },
-    { #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'C41A',
         'nome': 'Bairro da Glória',
         'h_inicial_tc': [['05:00'], ['05:00'], ['05:00']],
@@ -296,7 +296,7 @@ linhas = [
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
-    {# #ULTIMA VERIFICAÇÃO: 23/3/2024
+    {  # ULTIMA VERIFICAÇÃO: 23/3/2024
         'linha': 'C41B',
         'nome': 'Bairro da Glória',
         'h_inicial_tc': [['05:18', '22:42', '23:30'], ['05:30'], ['05:30']],
@@ -307,6 +307,42 @@ linhas = [
         'frequencia': [[''], [''], ['']],
         'dias': ['Dias Úteis', 'Sábado', 'Domingo']
     },
+    {
+        "linha": "S13",
+        "nome": "Frade",
+        "h_inicial_tc": [
+            ["05:40", "06:00", "16:30", "18:30", "20:00", "22:00", "22:45"],
+            ["06:06", "07:10", "11:30", "16:50", "18:10", "21:30", "22:30"],
+            ["05:15", "06:00", "20:00", "20:40", "21:40", "22:30"]
+        ],
+        "h_final_tc": [
+            ["06:00", "16:30", "18:30", "20:00", "22:00", "22:45", "23:45"],
+            ["07:10", "11:30", "16:50", "18:10", "21:30", "22:30", "23:45"],
+            ["06:00", "20:00", "20:40", "21:40", "22:30", "23:45"]
+        ],
+        "frequencia_tc": [
+            ["20min", "30min", "10min", "15min", "30min", "45min", "60min"],
+            ["16min", "20min", "25min", "35min", "40min", "60min", "75min"],
+            ["45min", "30min", "40min", "60min", "50min", "75min"]
+        ],
+        "h_inicial": [
+            ["04:00", "04:30", "05:00", "07:30", "19:00", "20:00", "20:30","21:20"],
+            ["04:40", "08:40", "09:50", "15:40", "19:00", "20:20"],
+            ["05:00", "18:00", "19:20", "19:40", "20:40", "21:00"]
+        ],
+        "h_final": [
+            ["04:30", "05:00", "07:30", "19:00", "20:00", "20:30", "21:30", "22:20"],
+            ["08:40", "09:50", "15:40", "19:00", "20:20", "22:20"],
+            ["18:00", "19:20", "19:40", "20:40", "21:00", "22:20"]
+        ],
+        "frequencia": [
+            ["30min", "15min", "10min", "30min", "10min", "30min", "50min", "60min"],
+            ["16min", "20min", "25min", "35min", "40min", "60min"],
+            ["30min", "40min", "20min", "30min", "20min", "40min"]
+        ],
+        "dias": ["Dias Úteis", "Sábado", "Domingo e Feriado"]
+    },
+
     {
         "linha": "T22",
         "nome": "Ajuda",
